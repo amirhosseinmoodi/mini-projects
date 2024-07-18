@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>countdown timer</title>
+</head>
+
+<body>
+    
+    <div id="timer-display">00:00</div>
+
+    <div>
+        <input type="number" id="minutes" class="timer-input input" placeholder="Minutes">
+        <input type="number" id="seconds" class="timer-input input" placeholder="Seconds">
+    </div>
+
+    <div>
+        <button id="start" class="btn">Start</button>
+        <button id="stop" class="btn">Stop</button>
+        <button id="reset" class="btn">Reset</button>
+    </div>
+
+
+</body>
+<script type="text/JavaScript">
+
+let intervalId;
+let timeRemaining;
+
+document.getElementById('start').addEventListener('click', () => {
+    let minutes = parseInt(document.getElementById('minutes').value);
+    let seconds = parseInt(document.getElementById('seconds').value);
+    if (isNaN(minutes)) minutes = 0;
+    if (isNaN(seconds)) seconds = 0;
+    timeRemaining = minutes * 60 + seconds;
+    updateDisplay();
+    intervalId = setInterval(countdown, 1000);
+});
+
+
+document.getElementById('stop').addEventListener('click', () => {
+  clearInterval(intervalId);
+});
+
+document.getElementById('reset').addEventListener('click', () => {
+  clearInterval(intervalId);
+  timeRemaining = 0;
+  updateDisplay();
+});
+
+function countdown() {
+  timeRemaining -= 1;
+  updateDisplay();
+  if (timeRemaining < 0) {
+    clearInterval(intervalId);
+    alert('Countdown finished!');
+  }
+}
+
+function updateDisplay() {
+  let minutes = Math.floor(timeRemaining / 60);
+  let seconds = timeRemaining % 60;
+  document.getElementById('timer-display').textContent = `${pad(minutes)}:${pad(seconds)}`;
+}
+
+function pad(number) {
+  return number < 10 ? '0' + number : number;
+}
+
+
+</script>
+
+</html>
