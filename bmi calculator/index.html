@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>bmi calculator</title>
+</head>
+
+<body class="body">
+    <div class="data container">
+        <h1>BMI Calculator</h1>
+        <h3>Enter the values and click the calculate button to get results.</h3>
+
+        <form id="form">
+            <div class="g-style">
+                <h2>Gender</h2>
+                <div class="genderGroup">
+                    <div class="genderOption">
+                        <input type="radio" id="female-gender" name="genderoption" value="female" required>
+                        <label for="female-gender">♀ female</label>
+                    </div>
+                    <div class="genderOption">
+                        <input type="radio" id="male-gender" name="genderoption" value="male" required>
+                        <label for="male-gender">♂ male</label>
+                    </div>
+                </div>
+            </div>
+            <div class="age g-style">
+                <label for="age">Age</label>
+                <input id="age" type="number" placeholder="21" required name="bmistuf">
+            </div>
+            <div class="height g-style">
+                <label for="height">Height</label>
+                <input id="height" type="number" placeholder="179 cm" required name="bmistuf">
+            </div>
+            <div class="weight g-style">
+                <label for="weight">Weight</label>
+                <input id="weight" type="number" placeholder="70 kg" required name="bmistuf">
+            </div>
+            <div class="buttonContainer">
+                <button class="calculate" type="submit">Calculate</button>
+                <button class="reset" type="reset"><i class="fa-solid fa-arrow-rotate-left"
+                        style="color: #f87171;"></i></button>
+            </div>
+        </form>
+    </div>
+    <div class="result container">
+        <h2>Your Result</h2>
+        <p>A BMI between 18.5 and 24.9 is considered normal weight, reducing the risk of weight-related health issues.
+        </p>
+        <div class="chart-container">
+            <div class="chart">
+                <div class="up-right arrow">
+                    <span class="up-right-text__positon arrow__text">normal weight</span>
+                    <svg class="up-right-arrow__positon" width="149" height="27" viewBox="0 0 149 27" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M144.741 26.2146C145.275 26.3576 145.823 26.041 145.966 25.5075L148.295 16.8142C148.438 16.2807 148.122 15.7324 147.588 15.5895C147.055 15.4465 146.506 15.7631 146.363 16.2966L144.293 24.024L136.565 21.9534C136.032 21.8105 135.484 22.1271 135.341 22.6605C135.198 23.194 135.514 23.7423 136.048 23.8853L144.741 26.2146ZM130.134 1.5L144.134 25.7487L145.866 24.7487L131.866 0.5L130.134 1.5Z"
+                            fill="black" />
+                        <line x1="7.86805e-08" y1="1.1" x2="131" y2="1.10001" stroke="black" stroke-width="1.8" />
+                    </svg>
+                </div>
+                <div class="up-left arrow">
+                    <span class="up-left-text__positon arrow__text">underweight</span>
+                    <svg class="up-left-arrow__positon" width="149" height="27" viewBox="0 0 149 27" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M144.741 26.2146C145.275 26.3576 145.823 26.041 145.966 25.5075L148.295 16.8142C148.438 16.2807 148.122 15.7324 147.588 15.5895C147.055 15.4465 146.506 15.7631 146.363 16.2966L144.293 24.024L136.565 21.9534C136.032 21.8105 135.484 22.1271 135.341 22.6605C135.198 23.194 135.514 23.7423 136.048 23.8853L144.741 26.2146ZM130.134 1.5L144.134 25.7487L145.866 24.7487L131.866 0.5L130.134 1.5Z"
+                            fill="black" />
+                        <line x1="7.86805e-08" y1="1.1" x2="131" y2="1.10001" stroke="black" stroke-width="1.8" />
+                    </svg>
+                </div>
+                <div class="down-right arrow">
+                    <span class="down-right-text__positon arrow__text">overweight</span>
+                    <svg class="down-right-arrow__positon" width="149" height="27" viewBox="0 0 149 27" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M144.741 26.2146C145.275 26.3576 145.823 26.041 145.966 25.5075L148.295 16.8142C148.438 16.2807 148.122 15.7324 147.588 15.5895C147.055 15.4465 146.506 15.7631 146.363 16.2966L144.293 24.024L136.565 21.9534C136.032 21.8105 135.484 22.1271 135.341 22.6605C135.198 23.194 135.514 23.7423 136.048 23.8853L144.741 26.2146ZM130.134 1.5L144.134 25.7487L145.866 24.7487L131.866 0.5L130.134 1.5Z"
+                            fill="black" />
+                        <line x1="7.86805e-08" y1="1.1" x2="131" y2="1.10001" stroke="black" stroke-width="1.8" />
+                    </svg>
+                </div>
+                <div class="down-left arrow">
+                    <span class="dowm-left-text__positon arrow__text">obese</span>
+                    <svg class="down-left-arrow__positon" width="149" height="27" viewBox="0 0 149 27" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M144.741 26.2146C145.275 26.3576 145.823 26.041 145.966 25.5075L148.295 16.8142C148.438 16.2807 148.122 15.7324 147.588 15.5895C147.055 15.4465 146.506 15.7631 146.363 16.2966L144.293 24.024L136.565 21.9534C136.032 21.8105 135.484 22.1271 135.341 22.6605C135.198 23.194 135.514 23.7423 136.048 23.8853L144.741 26.2146ZM130.134 1.5L144.134 25.7487L145.866 24.7487L131.866 0.5L130.134 1.5Z"
+                            fill="black" />
+                        <line x1="7.86805e-08" y1="1.1" x2="131" y2="1.10001" stroke="black" stroke-width="1.8" />
+                    </svg>
+                </div>
+
+                <span class="chart-text">
+
+                </span>
+            </div>
+        </div>
+        <div class="legend">
+            <div class="state">
+                <span class="underweight"></span>
+                <span>underweight</span>
+            </div>
+            <div class="state">
+                <span class="normal-weight"></span>
+                <span>normal weight</span>
+            </div>
+            <div class="state">
+                <span class="overweight"></span>
+                <span>overweight</span>
+            </div>
+            <div class="state">
+                <span class="obese"></span>
+                <span>obese</span>
+            </div>
+        </div>
+        <div class="result__data">
+            <h3>Healthy BMI range: <span>18.5 kg/m² - 25 kg/m²</span></h3>
+            <h3>Healthy weight for the height: <span>53.5 kg - 72.3 kg</span></h3>
+            <h3>BMI prime: <span>0.78</span></h3>
+            <h3>Ponderal index: <span>11.4 kg/m²</span></h3>
+        </div>
+    </div>
+    <script type="text/JavaScript" src="/script.js"></script>
+</body>
+
+</html>

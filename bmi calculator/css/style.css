@@ -1,0 +1,295 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: #fff1f2;
+}
+
+.container {
+    margin: 30px;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: lighter;
+    color: #4b5563;
+}
+
+.data {
+    width: 50vw;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 30px;
+}
+
+.g-style {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.g-style label {
+    font-size: 15px;
+}
+
+.g-style input {
+    width: 315px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+}
+
+.g-style input:focus {
+    outline: 1px solid #6b7280;
+}
+
+
+.genderGroup {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.genderOption>label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 17px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    cursor: pointer;
+    min-width: 150px;
+    height: 40px;
+}
+
+#form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+}
+
+.genderOption input[type="radio"] {
+    display: none;
+}
+
+.genderOption>input[type="radio"]:checked+label {
+    background-color: #f87171;
+    color: white;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.reset {
+    flex-basis: 10%;
+    border: 1px solid #f87171;
+    outline-color: #f87171;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.calculate {
+    flex-basis: 43%;
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+    background-color: #f87171;
+    border: none;
+    cursor: pointer;
+    outline-color: white;
+}
+
+.result {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 40px;
+    width: 50vw;
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.result h2 {
+    font-size: 16px;
+    border-bottom: 1px dotted grey;
+    padding-bottom: 15px;
+}
+
+.result p {
+    font-size: 14px;
+}
+
+.chart-container {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+}
+
+.chart {
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(#6cd3a5 10% 25%,
+            #ffb946 25% 50%,
+            #f95f62 50% 75%,
+            #73d2de 75% 100%);
+    border-radius: 50%;
+    position: relative;
+}
+
+.chart::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: 75%;
+    background: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.chart-text {
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.legend .state {
+    display: flex;
+    align-items: center;
+}
+
+.legend .state :nth-child(2) {
+    font-size: 14px;
+}
+
+.legend .state :first-child {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 50px;
+}
+
+.underweight {
+    background: #73d2de;
+}
+
+.normal-weight {
+    background: #6cd3a5;
+}
+
+.overweight {
+    background: #ffb946;
+}
+
+.obese {
+    background: #f95f62;
+}
+
+.result__data {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+
+.result__data h3 {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.result__data span {
+    color: #6b7280;
+    font-weight: lighter;
+}
+
+.up-right-arrow__positon {
+    position: absolute;
+    top: 10px;
+    right: -90px;
+    rotate: y 180deg;
+}
+
+.arrow__text {
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+.up-right-text__positon {
+    position: relative;
+    top: -10px;
+    left: 190px;
+}
+
+.up-left-arrow__positon {
+    position: relative;
+    top: -30px;
+    right: 90px;
+}
+
+.up-left-text__positon {
+    position: relative;
+    top: -32px;
+    right: 60px;
+}
+
+.down-left-arrow__positon {
+    position: relative;
+    top: 40px;
+    rotate: x 180deg;
+    right: 160px;
+
+}
+
+.dowm-left-text__positon {
+    position: relative;
+    top: 30px;
+    right: 45px;
+}
+
+.down-right-arrow__positon {
+    position: relative;
+    rotate: z 180deg;
+    top: 75px;
+    left: 180px;
+}
+
+.down-right-text__positon {
+    position: relative;
+    top: 95px;
+    left: 210px;
+}
+
+.arrow {
+    visibility: hidden;
+}
