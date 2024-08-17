@@ -2,26 +2,26 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>countdown timer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>countdown timer</title>
 </head>
 
 <body>
-    
-    <div id="timer-display">00:00</div>
 
-    <div>
-        <input type="number" id="minutes" class="timer-input input" placeholder="Minutes">
-        <input type="number" id="seconds" class="timer-input input" placeholder="Seconds">
-    </div>
+  <div id="timer-display">00:00</div>
 
-    <div>
-        <button id="start" class="btn">Start</button>
-        <button id="stop" class="btn">Stop</button>
-        <button id="reset" class="btn">Reset</button>
-    </div>
+  <div>
+    <input type="number" id="minutes" class="timer-input input" placeholder="Minutes">
+    <input type="number" id="seconds" class="timer-input input" placeholder="Seconds">
+  </div>
+
+  <div>
+    <button id="start" class="btn">Start</button>
+    <button id="stop" class="btn">Stop</button>
+    <button id="reset" class="btn">Reset</button>
+  </div>
 
 
 </body>
@@ -37,18 +37,24 @@ document.getElementById('start').addEventListener('click', () => {
     if (isNaN(seconds)) seconds = 0;
     timeRemaining = minutes * 60 + seconds;
     updateDisplay();
+    document.getElementById('minutes').style.display = "none";
+    document.getElementById('seconds').style.display = "none";
     intervalId = setInterval(countdown, 1000);
 });
 
 
 document.getElementById('stop').addEventListener('click', () => {
   clearInterval(intervalId);
+  document.getElementById('minutes').style.display = "initial";
+  document.getElementById('seconds').style.display = "initial";
 });
 
 document.getElementById('reset').addEventListener('click', () => {
   clearInterval(intervalId);
   timeRemaining = 0;
   updateDisplay();
+  document.getElementById('minutes').style.display = "initial";
+  document.getElementById('seconds').style.display = "initial";
 });
 
 function countdown() {
