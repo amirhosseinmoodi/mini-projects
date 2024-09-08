@@ -1,0 +1,197 @@
+@layer base {
+
+    html {
+        box-sizing: border-box;
+    }
+
+    *,
+    *::after,
+    *::before {
+        box-sizing: inherit;
+    }
+
+    h1,
+    h2 {
+        padding: 0;
+        margin: 0;
+    }
+
+    p {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        background: url("/assets/images/background.jpg") no-repeat;
+        background-size: cover;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+}
+
+@layer card {
+    .card {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        gap: 40px;
+        max-width: 400px;
+        background-color: rgba(255, 255, 255, 0.3);
+        max-width: 400px;
+        border-radius: 10px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 8rem auto;
+        padding: 2rem;
+        color: white;
+
+    }
+}
+
+@layer searchbox {
+    .search-box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding: 0 0.8rem 0 0.25rem;
+    }
+
+    .search-box input {
+        grid-column: 2/3;
+        color: white;
+        letter-spacing: 2px;
+        font-size: 1.3rem;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        text-transform: uppercase;
+        padding: 0.5rem;
+    }
+
+    .search-box input::placeholder {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        color: white;
+        text-align: left;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+
+    .search-box i {
+        grid-column: 1/2;
+        justify-self: right;
+        font-size: 1rem;
+    }
+
+    .search-box button {
+        grid-column: 3/4;
+        color: white;
+        background-color: transparent;
+        border: none;
+        border-radius: 50%;
+        padding: 0.25rem;
+        cursor: pointer;
+        font-size: 1.25rem;
+        justify-self: left;
+    }
+
+    .search-box button:hover {
+        color: #debff4;
+    }
+}
+
+@layer weather-temp {
+
+    .weather-temp {
+        text-align: center;
+    }
+
+    .weather-temp p {
+        position: relative;
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 700;
+    }
+
+    .weather-temp p :last-child {
+        font-size: 1rem;
+        position: absolute;
+        top: 7px;
+    }
+
+    .weather-temp img {
+        width: 65%;
+        max-width: 100%;
+    }
+
+    .weather-temp .city-name {
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        font-weight: 400;
+    }
+
+}
+
+@layer weather-status {
+    .weather-status {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .humidity {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .wind {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .humidity p,
+    .wind p {
+        font-size: 0.8rem;
+        font-weight: lighter;
+    }
+
+    .humidity> :first-child,
+    .wind> :first-child {
+        font-size: 2.5rem;
+    }
+
+    .humidity__measure,
+    .wind__speed {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+}
+
+@layer error {
+
+    .weather-temp,
+    .weather-status,
+    .invalid-city {
+        display: none;
+    }
+
+    .invalid-city {
+        text-align: center;
+        margin-top: 3rem;
+    }
+
+    .invalid-city img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .invalid-city p {
+        text-transform: capitalize;
+        font-size: 1.25rem;
+        margin-top: 1rem;
+    }
+}

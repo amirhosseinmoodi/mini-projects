@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="card">
+        <div class="search-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <input id="userlocation" type="text" placeholder="Enter your location">
+            <button class="fa-solid fa-magnifying-glass current-temp"></button>
+        </div>
+        <div class=" invalid-city">
+            <img src="/assets/images/404.png">
+            <p>ooops!!! your locarion is invalid</p>
+        </div>
+        <div class="weather-temp">
+            <img src="/assets/images/snow.png">
+            <p>17<span>°C</span>
+            </p>
+            <p class="city-name">Melbourne</p>
+        </div>
+        <div class="weather-status">
+            <div class="humidity">
+                <i class="fa-solid fa-water"></i>
+                <p><span class="humidity__measure">0</span> %<br>Humidity</p>
+            </div>
+            <div class="wind">
+                <i class="fa-solid fa-wind"></i>
+                <p><span class="wind__speed">0</span> km/h<br>Wind Speed</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
